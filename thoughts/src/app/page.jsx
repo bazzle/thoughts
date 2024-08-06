@@ -5,7 +5,6 @@ export default function Home() {
 	const postMetaData = getPostMetadata('posts');
 	return (
 		<main className="main">
-			<p>My posts here</p>
 			{
 				postMetaData.map((post, postIndex) => (
 					<PostCard key={postIndex} post={post}/>
