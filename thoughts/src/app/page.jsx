@@ -1,15 +1,17 @@
-import PostCard from "./components/post-card";
+import IndexItem from "./components/index-item";
 import getPostMetadata from "./utils/get-post-metadata";
 
 export default function Home() {
 	const postMetaData = getPostMetadata('posts');
 	return (
 		<main className="main">
-			{
-				postMetaData.map((post, postIndex) => (
-					<PostCard key={postIndex} post={post}/>
-				))
-			}
+			<div className="post-index container--narrow">
+				{
+					postMetaData.map((post, postIndex) => (
+						<IndexItem key={postIndex} post={post}/>
+					))
+				}
+			</div>
 		</main>
   	);
 }

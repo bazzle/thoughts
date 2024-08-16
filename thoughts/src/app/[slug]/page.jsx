@@ -3,6 +3,7 @@ import getPostMetadata from "../utils/get-post-metadata"
 import React from "react"
 import fs from "fs"
 import matter from "gray-matter"
+import { format } from "date-fns"
 
 function getPostContent(slug){
 	const file = `./posts/${slug}.md`;
@@ -13,7 +14,6 @@ function getPostContent(slug){
 
 export const generateStaticParams = async () => {
 	const posts = getPostMetadata('posts');
-
 	return posts.map((post) => ({slug: post.slug}))
 }
 
@@ -24,17 +24,22 @@ export async function generateMetadata({params, searchParams}){
 	}
 }
 
-export default function thoughtPage(props) {
+export default function postPage(props) {
 	const slug = props.params.slug
 	const post = getPostContent(slug)
-	console.log(post)
+	const date = post.data.date;
+	const formattedDate = format(new Date(post.data.date), 'MMMM dd, yyyy');
 	return (
-		<main>
+		<main className="main">
 			<article>
-				<h1>{post.data.title}</h1>
-				<div className="content">
+				<div className="article-hero container">
+					<h1 className="article-hero__heading">{post.data.title}</h1>
+					<div className="article-hero__metadata text-meta">
+						<time datetime={date}>{formattedDate}</time>
+					</div>
+				</div>
+				<div className="article-main container--narrow">
 					<Markdown>{post.content}</Markdown>
-					
 				</div>
 			</article>
 		</main>

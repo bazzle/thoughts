@@ -6,5 +6,7 @@ tags: ["economics"]
 ---
 
 >The Jevons Paradox states that, in the long term, **an increase in efficiency in resource use will generate an increase in resource consumption rather than a decrease**.
+> 
+> – Knut Svanholm
 
 interesting thing to research, what you find interesting becomes your reality, Jeff booth, Preston Pysch etc

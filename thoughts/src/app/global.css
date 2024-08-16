@@ -1,7 +1,269 @@
+/* Imports --------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,700;1,700&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
+
+
+/* Some resets --------------------------------- */
+
+p, ul, ol, img, li, h1, h2, h3, h4, h5, h6, input, select, textarea, label{
+	padding-top: 0;
+	margin-top: 0;
+}
+
+input, button, label, textarea{
+	margin-bottom: var(--block-spacing--shallow);
+}
+
+*{
+	box-sizing: border-box;
+}
+
+/* Variables ------------------------------ */
+
+/* Spacing --- */
+:root{
+	--border-radius: 4px;
+	--gutter-padding: 2rem;
+	--gutter-padding--mobile: 4rem;
+	--block-spacing: 4rem;
+	--block-spacing--shallow: 2rem;
+	--block-spacing--deep: 6rem;
+}
+
+/* Fonts --- */
+:root{
+	--font-std: "Literata", serif;
+	--font-standout: "Averia Serif Libre", serif;
+	--font-blocky: "Averia Serif Libre", serif;
+	--font-size-small: 1.4rem;
+	--font-size-regular: 1.6rem;
+	--font-size-regular--responsive: clamp(1.4rem, 3vw, 1.6rem);
+	--font-size-body: 1.8rem;
+	--font-size-body-responsive: clamp(1.4rem, 4vw, 1.8rem);
+	--font-size-display: 6.4rem;
+	--font-size-display-small: 4rem;
+	--font-size-display-responsive: clamp(3rem, 5.5vw, 6.4rem);
+	--font-weight-regular: 400;
+	--font-weight-bold: 700;
+}
+
+/* Colours --- */
+:root{
+	--color-foreground: rgb(0, 0, 0);
+	--color-accent: #158897;
+	--color-bg: rgb(242, 242, 242);
+	--color-bg-alt: rgb(255, 255, 255);
+	--color-feint-line: rgb(255, 255, 255, 0.2);
+}
 @media (prefers-color-scheme: dark) {
-	html {
-	  color-scheme: dark;
-	  background-color: #000000;
+	:root{
+		--color-foreground: rgb(255, 255, 255);
+		--color-accent: #9AF3FF;
+		--color-bg: rgb(15, 15, 15);
+		--color-bg-alt: rgb(0, 0, 0);
+		--color-feint-line: rgb(255, 255, 255, 0.2);
 	}
-  }
-  
+}
+
+/* Base --------------- */
+
+html{
+	font-size: 10px;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	color: var(--color-foreground);
+	font-family: var(--font-std);
+	font-size: var(--font-size-body);
+	font-weight: var(--font-weight-regular);
+	background-color: var(--color-bg);
+	background-size: 100% 800px;
+	background-repeat: no-repeat;
+	@media (prefers-color-scheme: light) {
+		background-image: linear-gradient(to bottom,rgba(255,255,255, 1), rgba(255,255,255, 0));
+	}
+}
+
+h1, h2, h3, h4, h5{
+	font-family: var(--font-standout);
+}
+
+a{
+	color: var(--color-accent);
+	text-decoration: underline;
+	text-underline-offset: .15em;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+bold, strong{
+	font-weight: 700;
+}
+
+/* Some typo styles --------------- */
+
+.text-meta{
+	text-transform: uppercase;
+	font-family: var(--font-blocky);
+	font-size: 1.4rem;
+	letter-spacing: 0.04;
+}
+
+/* Helpers --------------- */
+
+.highlight{
+	color: var(--color-accent);
+}
+
+/* Layout --------------- */
+
+.container{
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding-left: var(--gutter-padding--mobile);
+	padding-right: var(--gutter-padding--mobile);
+}
+
+.container--narrow{
+	width: 100%;
+	max-width: 760px;
+	margin: 0 auto;
+	padding-left: var(--gutter-padding--mobile);
+	padding-right: var(--gutter-padding--mobile);
+}
+
+main{
+	min-height:70vh;
+}
+
+/* Some common elements --------------- */
+
+hr{
+	border: 0;
+	background-color: black;
+	height: 1px;
+	margin-bottom: var(--block-spacing);
+}
+
+button{
+	background-color: var(--color-foreground);
+	border: none;
+	text-transform: uppercase;
+	padding: .5em .8em;
+	margin: .5em;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* Header -------------------- */
+
+.header{
+	padding-top: var(--block-spacing--shallow);
+	padding-bottom: var(--block-spacing--deep);
+	position: relative;
+}
+
+.header a{
+	color: var(--color-foreground);
+	text-decoration: none;
+}
+
+.header__inner{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	position: relative;
+}
+
+.header__site-name{
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	font-size: var(--font-size-regular);
+	font-weight: var(--font-weight-bold);
+	text-transform: uppercase;
+	display: flex;
+	gap: .5em;
+	position: relative;
+	top: .05em;
+	letter-spacing: 0.03em;
+	flex-shrink: 0;
+}
+
+.header__line{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	height: 1px;
+	background-color: var(--color-foreground);
+	width: 100%;
+}
+
+/* post index -------------------- */
+
+.post-index-item{
+	margin-bottom: var(--block-spacing--deep);
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+}
+.post-index-item__date{
+	display: block;
+	margin-bottom: var(--block-spacing--shallow);
+	font-size: var(--font-size-regular);
+	font-family: var(--font-blocky);
+	text-transform: uppercase;
+}
+.post-index-item__excerpt{
+	font-size: var(--font-size-body--responsive);
+}
+
+/* article -------------------- */
+
+.article-hero{
+	text-align: center;
+	padding-bottom: var(--block-spacing--deep);
+}
+.article-hero__heading{
+	font-size: var(--font-size-display-responsive);
+}
+
+.article-hero__metadata{
+	font-size: var(--font-size-regular);
+	font-family: var(--font-blocky);
+}
+
+.article-main{
+	p, li, cite{
+		font-size: var(--font-size-body-responsive);
+		line-height: 1.6em;
+	}
+}
+
+/* Article common elements -------------------- */
+
+blockquote{
+	border-left: 6px solid var(--color-accent);
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 2em;
+}
+
+/* Footer -------------------- */
+
+.footer{
+	padding-top: var(--block-spacing--deep);
+	padding-bottom: var(--block-spacing--deep);
+}
+	
+.footer__line{
+	width: 100%;
+	text-align: center;
+	font-family: var(--font-blocky);
+}
