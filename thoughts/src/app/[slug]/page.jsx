@@ -35,7 +35,7 @@ export default function postPage(props) {
 				<div className="article-hero container">
 					<h1 className="article-hero__heading">{post.data.title}</h1>
 					<div className="article-hero__metadata text-meta">
-						<time datetime={date}>{formattedDate}</time>
+						<time dateTime={date}>{formattedDate}</time>
 					</div>
 				</div>
 				<div className="article-main container--narrow">

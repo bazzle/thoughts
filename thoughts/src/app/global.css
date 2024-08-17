@@ -10,12 +10,18 @@ p, ul, ol, img, li, h1, h2, h3, h4, h5, h6, input, select, textarea, label{
 	margin-top: 0;
 }
 
+ul, ol{
+	padding: 0;
+	list-style: none;
+}
+
 input, button, label, textarea{
 	margin-bottom: var(--block-spacing--shallow);
 }
 
 *{
 	box-sizing: border-box;
+	word-wrap: break-word;
 }
 
 /* Variables ------------------------------ */
@@ -23,8 +29,8 @@ input, button, label, textarea{
 /* Spacing --- */
 :root{
 	--border-radius: 4px;
-	--gutter-padding: 2rem;
-	--gutter-padding--mobile: 4rem;
+	--gutter-padding: 4rem;
+	--gutter-padding--mobile: 2rem;
 	--block-spacing: 4rem;
 	--block-spacing--shallow: 2rem;
 	--block-spacing--deep: 6rem;
@@ -208,7 +214,7 @@ button{
 /* post index -------------------- */
 
 .post-index-item{
-	margin-bottom: var(--block-spacing--deep);
+	margin-bottom: var(--block-spacing);
 	&:last-of-type{
 		margin-bottom: 0;
 	}
@@ -221,7 +227,7 @@ button{
 	text-transform: uppercase;
 }
 .post-index-item__excerpt{
-	font-size: var(--font-size-body--responsive);
+	font-size: var(--font-size-body-responsive);
 }
 
 /* article -------------------- */
@@ -242,17 +248,27 @@ button{
 .article-main{
 	p, li, cite{
 		font-size: var(--font-size-body-responsive);
-		line-height: 1.6em;
+		line-height: 1.8em;
+	}
+	li{
+		padding-bottom: .5em;
+	}
+	ul, ol{
+		list-style: square;
+		padding-left: 1em;
+		li::marker{
+			color: var(--color-accent);
+		}
 	}
 }
 
 /* Article common elements -------------------- */
 
 blockquote{
-	border-left: 6px solid var(--color-accent);
+	border-left: 2px solid var(--color-accent);
 	margin-left: 0;
 	margin-right: 0;
-	padding-left: 2em;
+	padding-left: 1em;
 }
 
 /* Footer -------------------- */
