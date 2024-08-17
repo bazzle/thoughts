@@ -4,6 +4,7 @@ import React from "react"
 import fs from "fs"
 import matter from "gray-matter"
 import { format } from "date-fns"
+import Link from "next/link"
 
 function getPostContent(slug){
 	const file = `./posts/${slug}.md`;
@@ -40,6 +41,9 @@ export default function postPage(props) {
 				</div>
 				<div className="article-main container--narrow">
 					<Markdown>{post.content}</Markdown>
+				</div>
+				<div className="article__back container--narrow">
+					<Link href="/">Back to home</Link>
 				</div>
 			</article>
 		</main>
