@@ -5,6 +5,7 @@ import fs from "fs"
 import matter from "gray-matter"
 import { format } from "date-fns"
 import Link from "next/link"
+import Header from "../components/header"
 
 function getPostContent(slug){
 	const file = `./posts/${slug}.md`;
@@ -19,9 +20,10 @@ export const generateStaticParams = async () => {
 }
 
 export async function generateMetadata({params, searchParams}){
-	const id = params.slug ? ' . ' + params.slug : ''
+	const pageName = getPostContent(params.slug).data.title;
+	const pageTitle = `${pageName} - My Thoughts`;
 	return{
-		title: `My thoughts ${id.replaceAll('_', ' ')}`
+		title: pageTitle
 	}
 }
 
@@ -31,6 +33,8 @@ export default function postPage(props) {
 	const date = post.data.date;
 	const formattedDate = format(new Date(post.data.date), 'MMMM dd, yyyy');
 	return (
+		<>
+		<Header isHomePage={false}/>
 		<main className="main">
 			<article>
 				<div className="article-hero container">
@@ -39,7 +43,7 @@ export default function postPage(props) {
 						<time dateTime={date}>{formattedDate}</time>
 					</div>
 				</div>
-				<div className="article-main container--narrow">
+				<div className="article-main body-text container--narrow">
 					<Markdown>{post.content}</Markdown>
 				</div>
 				<div className="article__back container--narrow">
@@ -47,5 +51,6 @@ export default function postPage(props) {
 				</div>
 			</article>
 		</main>
+		</>
 	)
 }
