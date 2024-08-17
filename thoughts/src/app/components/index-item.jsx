@@ -8,7 +8,7 @@ export default function IndexItem(props){
 	return (
 		<div className="post-index-item">
 			<h2 className="post-index-item__title">
-				<Link href={post.slug}>{post.title}</Link>
+				<Link href={'posts/' + post.slug}>{post.title}</Link>
 			</h2>
 			<time className="post-index-item__date" dateTime={rawDate}>{formattedDate}</time>
 			<p className="post-index-item__excerpt">{post.excerpt}</p>

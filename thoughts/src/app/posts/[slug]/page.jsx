@@ -1,5 +1,5 @@
 import Markdown from "markdown-to-jsx"
-import getPostMetadata from "../utils/get-post-metadata"
+import getPostMetadata from "../../utils/get-post-metadata"
 import React from "react"
 import fs from "fs"
 import matter from "gray-matter"
