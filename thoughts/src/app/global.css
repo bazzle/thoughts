@@ -46,9 +46,10 @@ input, button, label, textarea{
 	--font-size-regular--responsive: clamp(1.4rem, 3vw, 1.6rem);
 	--font-size-body: 1.8rem;
 	--font-size-body-responsive: clamp(1.4rem, 4vw, 1.8rem);
+	--font-size-heading: 2.7rem;
 	--font-size-display: 6.4rem;
 	--font-size-display-small: 4rem;
-	--font-size-display-responsive: clamp(3rem, 5.5vw, 6.4rem);
+	--font-size-display-responsive: clamp(3.4rem, 5.5vw, 6.4rem);
 	--font-weight-regular: 400;
 	--font-weight-bold: 700;
 }
@@ -195,7 +196,6 @@ button{
 	margin: 0;
 	padding: 0;
 	line-height: 1;
-	font-size: var(--font-size-regular);
 	font-weight: var(--font-weight-bold);
 	text-transform: uppercase;
 	display: flex;
@@ -204,6 +204,10 @@ button{
 	top: .05em;
 	letter-spacing: 0.03em;
 	flex-shrink: 0;
+	h1, a{
+		font-size: var(--font-size-regular)!important;
+		margin-bottom: 0;
+	}
 }
 
 .header__line{
@@ -222,6 +226,9 @@ button{
 	&:last-of-type{
 		margin-bottom: 0;
 	}
+}
+.post-index-item__title{
+	font-size: var(--font-size-heading);
 }
 .post-index-item__date{
 	display: block;
@@ -250,6 +257,10 @@ button{
 	p, li, cite{
 		font-size: var(--font-size-body-responsive);
 		line-height: 1.8em;
+	}
+	h2, h3, h4, h5, h6{
+		font-family: var(--font-standout);
+		font-size: var(--font-size-heading);
 	}
 	li{
 		padding-bottom: .5em;
