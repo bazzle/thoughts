@@ -1,6 +1,6 @@
-import Header from "./components/header";
-import IndexItem from "./components/index-item";
-import getPostMetadata from "./utils/get-post-metadata";
+import Header from "@/components/header";
+import IndexItem from "@/components/index-item";
+import getPostMetadata from "@/utils/get-post-metadata";
 
 export default function Home() {
 	const postMetaData = getPostMetadata('posts');

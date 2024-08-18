@@ -1,14 +1,14 @@
 import Markdown from "markdown-to-jsx"
-import getPostMetadata from "../utils/get-post-metadata"
+import getPostMetadata from "@/utils/get-post-metadata"
 import React from "react"
 import fs from "fs"
 import matter from "gray-matter"
 import { format } from "date-fns"
 import Link from "next/link"
-import Header from "../components/header"
+import Header from "@/components/header"
 
 function getPostContent(slug){
-	const file = `./posts/${slug}.md`;
+	const file = `./app/posts/${slug}.md`;
 	const content = fs.readFileSync(file,'utf8');
 	const matterResult = matter(content);
 	return matterResult;
