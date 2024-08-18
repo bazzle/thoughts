@@ -53,6 +53,11 @@ input, button, label, textarea{
 	--font-weight-regular: 350;
 	--font-weight-bold: 500;
 }
+@media (prefers-color-scheme: dark) {
+	:root{
+		--font-weight-regular: 250;
+	}
+}
 
 /* Colours --- */
 :root{
@@ -66,8 +71,8 @@ input, button, label, textarea{
 	:root{
 		--color-foreground: rgb(255, 255, 255);
 		--color-accent: #9AF3FF;
-		--color-bg: rgb(15, 15, 15);
-		--color-bg-alt: rgb(0, 0, 0);
+		--color-bg: rgb(24, 24, 24);
+		--color-bg-alt: rgb(14, 14, 14);
 		--color-feint-line: rgb(255, 255, 255, 0.2);
 	}
 }
