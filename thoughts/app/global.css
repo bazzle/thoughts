@@ -50,8 +50,8 @@ input, button, label, textarea{
 	--font-size-display: 6.4rem;
 	--font-size-display-small: 4rem;
 	--font-size-display-responsive: clamp(3.4rem, 5.5vw, 6.4rem);
-	--font-weight-regular: 400;
-	--font-weight-bold: 700;
+	--font-weight-regular: 350;
+	--font-weight-bold: 500;
 }
 
 /* Colours --- */
@@ -107,7 +107,7 @@ a{
 }
 
 bold, strong{
-	font-weight: 700;
+	font-weight: var(--font-weight-bold)
 }
 
 /* Some typo styles --------------- */
@@ -196,8 +196,6 @@ button{
 	margin: 0;
 	padding: 0;
 	line-height: 1;
-	font-weight: var(--font-weight-bold);
-	text-transform: uppercase;
 	display: flex;
 	gap: .5em;
 	position: relative;
@@ -205,8 +203,11 @@ button{
 	letter-spacing: 0.03em;
 	flex-shrink: 0;
 	h1, a{
+		font-family: var(--font-blocky)!important;
 		font-size: var(--font-size-regular)!important;
-		margin-bottom: 0;
+		margin-bottom: 0!important;
+		text-transform: uppercase!important;
+		font-weight: var(--font-weight-bold)!important;
 	}
 }
 
