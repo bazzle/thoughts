@@ -98,6 +98,11 @@ body{
 	}
 }
 
+::selection{
+	background-color: var(--color-accent);
+	color: black;
+}
+
 h1, h2, h3, h4, h5{
 	font-family: var(--font-standout);
 }
@@ -277,6 +282,14 @@ button{
 		li::marker{
 			color: var(--color-accent);
 		}
+	}
+	hr{
+		background-color: var(--color-accent);
+		margin-top: var(--block-spacing--deep);
+		margin-bottom: var(--block-spacing--deep);
+		height: .5px;
+		width: 100px;
+		border: 0;
 	}
 }
 
