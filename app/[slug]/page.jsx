@@ -8,7 +8,7 @@ import Link from "next/link"
 import Header from "@/components/header"
 
 function getPostContent(slug){
-	const file = `./app/posts/${slug}.md`;
+	const file = `./posts/blog-posts/${slug}.md`;
 	const content = fs.readFileSync(file,'utf8');
 	const matterResult = matter(content);
 	return matterResult;
