@@ -25,7 +25,7 @@ export default function getPostMetadata(basePath){
 			const firstValueA = Object.values(a)[0];
 			const firstValueB = Object.values(b)[0];
 			// Convert to numbers and compare
-			return firstValueA - firstValueB;
+			return firstValueB - firstValueA;
 		});
 	}
 
