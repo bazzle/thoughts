@@ -37,3 +37,6 @@ next-env.d.ts
 
 # content
 /posts
+
+# Lock files
+*.lock
