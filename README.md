@@ -8,3 +8,5 @@ Content is in separate repo. Markdown posts within /posts/blog-posts
 
 * react
 * next.js
+
+This is discontinued, in favour of — [Thoughts 2](https://github.com/bazzle/thoughts2)
